@@ -5,7 +5,6 @@ using UnityEngine;
 public class GuidanceController : MonoBehaviour
 {
     // Start is called before the first frame update
-
     public bool enableVisual2D = false;
     public bool enableVisualSpatial = false;
     public bool enableTextDescription = false;
@@ -18,6 +17,7 @@ public class GuidanceController : MonoBehaviour
     public GameObject audio2D;
     public GameObject audio3D;
     public GameObject audioDescription;
+    public KeyCode keyCode = KeyCode.Space;
     void Start()
     {
         
@@ -26,7 +26,7 @@ public class GuidanceController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(keyCode))
         {
             if (enableVisual2D && visual2D)
             {
