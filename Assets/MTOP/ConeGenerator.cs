@@ -8,15 +8,20 @@ public class ConeGenerator : MonoBehaviour
     public float fovAngle = 45f;       // Field of view angle (degrees)
     public int resolution = 30;       // Number of segments for the circular base
     public Material coneMaterial;     // Material for visualization
-
-    private Mesh coneMesh;
+    private Mesh _coneMesh;
+    private MeshCollider _meshCollider;
 
     void Start()
     {
         // Generate and assign the cone mesh
         MeshFilter meshFilter = GetComponent<MeshFilter>();
-        coneMesh = CreateConeMesh();
-        meshFilter.mesh = coneMesh;
+        _meshCollider = GetComponent<MeshCollider>();
+        ;
+        _coneMesh = CreateConeMesh();
+        meshFilter.mesh = _coneMesh;
+        _meshCollider.sharedMesh = _coneMesh;
+        _meshCollider.convex = true;
+        _meshCollider.isTrigger = true;
 
         // Assign material for visualization
         if (coneMaterial != null)
@@ -72,5 +77,30 @@ public class ConeGenerator : MonoBehaviour
         mesh.RecalculateNormals();
 
         return mesh;
+    }
+    // Detecting Risks in FOV
+    private void OnTriggerEnter(Collider other)
+    {
+        GameObject targetObject = other.gameObject;
+        Debug.Log(targetObject.name + " entered");
+        if (targetObject.CompareTag("PrivacyRisk"))
+        {
+            Debug.Log("Object entered FOV: " + targetObject.name);
+
+            // Optional: Play spatial audio
+            AudioSource audioSource = targetObject.GetComponentInChildren<AudioSource>();
+            audioSource.enabled = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        GameObject targetObject = other.gameObject;
+        if (other.gameObject.CompareTag("PrivacyRisk"))
+        {
+            Debug.Log("Object exited FOV: " + other.gameObject.name);
+            AudioSource audioSource = other.gameObject.GetComponentInChildren<AudioSource>();
+            audioSource.enabled = false;
+        }
     }
 }
