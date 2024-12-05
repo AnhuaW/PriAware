@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class CollisionDetection : MonoBehaviour
 {
+    public bool audioOn = false;
+    public bool boundingBoxOn = false;
+    public bool textLabelOn = false;
     private void OnTriggerEnter(Collider other)
     {
         GameObject targetObject = other.gameObject;
@@ -13,9 +17,29 @@ public class CollisionDetection : MonoBehaviour
             Debug.Log("Object entered FOV: " + targetObject.name);
 
             // Optional: Play spatial audio
-            AudioSource audioSource = targetObject.GetComponentInChildren<AudioSource>();
-            audioSource.enabled = true;
-            targetObject.GetComponent<LineRenderer>().enabled = true;
+            if (audioOn)
+            {
+                AudioSource audioSource = targetObject.GetComponentInChildren<AudioSource>();
+                audioSource.enabled = true;
+            }
+
+            if (boundingBoxOn)
+            {
+                targetObject.GetComponent<LineRenderer>().enabled = true;
+            }
+
+            if (textLabelOn)
+            {
+                TextMeshPro textMesh = targetObject.GetComponentInChildren<TextMeshPro>();
+                if (textMesh != null)
+                {
+                    textMesh.enabled = true;
+                }
+                else
+                {
+                    Debug.Log("no text label found");
+                }
+            }
         }
     }
 
@@ -26,9 +50,29 @@ public class CollisionDetection : MonoBehaviour
         if (other.gameObject.CompareTag("PrivacyRisk"))
         {
             Debug.Log("Object exited FOV: " + other.gameObject.name);
-            AudioSource audioSource = other.gameObject.GetComponentInChildren<AudioSource>();
-            audioSource.enabled = false;
-            targetObject.GetComponent<LineRenderer>().enabled = false;
+            if (audioOn)
+            {
+                AudioSource audioSource = other.gameObject.GetComponentInChildren<AudioSource>();
+                audioSource.enabled = false;
+            }
+
+            if (boundingBoxOn)
+            {
+                targetObject.GetComponent<LineRenderer>().enabled = false;
+            }
+            
+            if (textLabelOn)
+            {
+                TextMeshPro textMesh = targetObject.GetComponentInChildren<TextMeshPro>();
+                if (textMesh != null)
+                {
+                    textMesh.enabled = false;
+                }
+                else
+                {
+                    Debug.Log("no text label found");
+                }
+            }
         }
     }
 }

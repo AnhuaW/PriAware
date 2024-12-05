@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class HoverIcon : MonoBehaviour
@@ -10,7 +11,6 @@ public class HoverIcon : MonoBehaviour
     public GameObject target;
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -18,10 +18,11 @@ public class HoverIcon : MonoBehaviour
     {
         if(rigCamera != null)
         {
-            Vector3 iconPos = target.transform.position;
-            iconPos.y += offset;
-            this.transform.position = iconPos;
+            //Vector3 iconPos = target.transform.position;
+            //iconPos.y += offset;
+            //this.transform.position = iconPos;
             this.transform.LookAt(rigCamera.transform);
+            transform.Rotate(0, 180, 0);
         }
     }
 }

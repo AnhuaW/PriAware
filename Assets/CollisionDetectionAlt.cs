@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CollisionDetectionAlt : MonoBehaviour
 {
-    void OnTriggerEnter(GameObject other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("SensingDevice"))
         {
@@ -13,7 +13,7 @@ public class CollisionDetectionAlt : MonoBehaviour
         }
     }
 
-    void OnTriggerExit(GameObject other)
+    void OnTriggerExit(Collider other)
     {
         
     }
