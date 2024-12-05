@@ -15,6 +15,7 @@ public class CollisionDetection : MonoBehaviour
             // Optional: Play spatial audio
             AudioSource audioSource = targetObject.GetComponentInChildren<AudioSource>();
             audioSource.enabled = true;
+            targetObject.GetComponent<LineRenderer>().enabled = true;
         }
     }
 
@@ -27,6 +28,7 @@ public class CollisionDetection : MonoBehaviour
             Debug.Log("Object exited FOV: " + other.gameObject.name);
             AudioSource audioSource = other.gameObject.GetComponentInChildren<AudioSource>();
             audioSource.enabled = false;
+            targetObject.GetComponent<LineRenderer>().enabled = false;
         }
     }
 }
