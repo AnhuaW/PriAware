@@ -10,6 +10,7 @@ TagManager:
   - LocoButton
   - LocoText
   - PrivacyRisk
+  - SensingDevice
   layers:
   - Default
   - TransparentFX

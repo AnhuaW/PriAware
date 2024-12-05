@@ -66,10 +66,11 @@ public class ConeGenerator : MonoBehaviour
         int baseCenterIndex = vertices.Length - 1;
         for (int i = 0; i < resolution; i++)
         {
-            triangles[triIndex++] = baseCenterIndex;
+            triangles[triIndex++] = 1; // First base vertex
             triangles[triIndex++] = (i + 1) % resolution + 1;
             triangles[triIndex++] = i + 1;
         }
+
 
         // Assign vertices and triangles to the mesh
         mesh.vertices = vertices;
@@ -79,28 +80,5 @@ public class ConeGenerator : MonoBehaviour
         return mesh;
     }
     // Detecting Risks in FOV
-    private void OnTriggerEnter(Collider other)
-    {
-        GameObject targetObject = other.gameObject;
-        Debug.Log(targetObject.name + " entered");
-        if (targetObject.CompareTag("PrivacyRisk"))
-        {
-            Debug.Log("Object entered FOV: " + targetObject.name);
-
-            // Optional: Play spatial audio
-            AudioSource audioSource = targetObject.GetComponentInChildren<AudioSource>();
-            audioSource.enabled = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        GameObject targetObject = other.gameObject;
-        if (other.gameObject.CompareTag("PrivacyRisk"))
-        {
-            Debug.Log("Object exited FOV: " + other.gameObject.name);
-            AudioSource audioSource = other.gameObject.GetComponentInChildren<AudioSource>();
-            audioSource.enabled = false;
-        }
-    }
+   
 }

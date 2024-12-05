@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 1551979136124693028}
   - component: {fileID: 1011758265772193622}
   - component: {fileID: -2679131812961554972}
+  - component: {fileID: 4460797699460145253}
   m_Layer: 0
   m_Name: SensingRangeGenerator
-  m_TagString: Untagged
+  m_TagString: SensingDevice
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,7 +101,7 @@ MonoBehaviour:
   viewDistance: 10
   fovAngle: 45
   resolution: 30
-  coneMaterial: {fileID: 0}
+  coneMaterial: {fileID: 2100000, guid: baf20df78bbf18649a742be2206705bc, type: 2}
 --- !u!64 &-2679131812961554972
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -123,3 +124,15 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &4460797699460145253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8855405497494727776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62914f012b7325c42bad475b4b0828dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
