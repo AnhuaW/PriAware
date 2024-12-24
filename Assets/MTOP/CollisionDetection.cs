@@ -8,10 +8,11 @@ public class CollisionDetection : MonoBehaviour
     public bool audioOn = false;
     public bool boundingBoxOn = false;
     public bool textLabelOn = false;
+    public bool ttsOn = false;
     private void OnTriggerEnter(Collider other)
     {
         GameObject targetObject = other.gameObject;
-        Debug.Log(targetObject.name + " entered");
+        //Debug.Log(targetObject.name + " entered");
         if (targetObject.CompareTag("PrivacyRisk"))
         {
             Debug.Log("Object entered FOV: " + targetObject.name);
@@ -35,9 +36,14 @@ public class CollisionDetection : MonoBehaviour
                 {
                     textMesh.enabled = true;
                 }
-                else
+            }
+            
+            if (ttsOn)
+            {
+                TextToSpeechController ttsController = targetObject.GetComponentInChildren<TextToSpeechController>();
+                if (ttsController != null && !ttsController.descriptionPlayed)
                 {
-                    Debug.Log("no text label found");
+                    ttsController.PlayAudioDescription();
                 }
             }
         }
@@ -46,7 +52,7 @@ public class CollisionDetection : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         GameObject targetObject = other.gameObject;
-        Debug.Log(targetObject.name + " exited");
+        //Debug.Log(targetObject.name + " exited");
         if (other.gameObject.CompareTag("PrivacyRisk"))
         {
             Debug.Log("Object exited FOV: " + other.gameObject.name);
@@ -60,17 +66,13 @@ public class CollisionDetection : MonoBehaviour
             {
                 targetObject.GetComponent<LineRenderer>().enabled = false;
             }
-            
+
             if (textLabelOn)
             {
                 TextMeshPro textMesh = targetObject.GetComponentInChildren<TextMeshPro>();
                 if (textMesh != null)
                 {
                     textMesh.enabled = false;
-                }
-                else
-                {
-                    Debug.Log("no text label found");
                 }
             }
         }
