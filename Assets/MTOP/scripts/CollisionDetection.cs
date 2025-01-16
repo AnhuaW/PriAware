@@ -21,7 +21,10 @@ public class CollisionDetection : MonoBehaviour
             if (audioOn)
             {
                 AudioSource audioSource = targetObject.GetComponentInChildren<AudioSource>();
-                audioSource.enabled = true;
+                if (audioSource != null)
+                {
+                    audioSource.enabled = true;
+                }
             }
 
             if (boundingBoxOn)
