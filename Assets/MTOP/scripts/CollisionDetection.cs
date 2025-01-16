@@ -26,6 +26,7 @@ public class CollisionDetection : MonoBehaviour
 
             if (boundingBoxOn)
             {
+                LineRenderer lineRenderer = targetObject.GetComponent<LineRenderer>();
                 targetObject.GetComponent<LineRenderer>().enabled = true;
             }
 
@@ -41,7 +42,7 @@ public class CollisionDetection : MonoBehaviour
             if (ttsOn)
             {
                 TextToSpeechController ttsController = targetObject.GetComponentInChildren<TextToSpeechController>();
-                if (ttsController != null && !ttsController.descriptionPlayed)
+                if (ttsController != null && !ttsController.ttsSpeaker.IsSpeaking)
                 {
                     ttsController.PlayAudioDescription();
                 }

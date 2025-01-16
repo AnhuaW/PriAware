@@ -21,7 +21,7 @@ public class TextToSpeechController : MonoBehaviour
         {
             string textToSpeak = textMeshPro.text;
             ttsSpeaker.Speak(textToSpeak);
-            descriptionPlayed = true;
+            //descriptionPlayed = true;
         }
     }
 }
