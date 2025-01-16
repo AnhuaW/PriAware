@@ -44,10 +44,10 @@ public class Customization : MonoBehaviour
         visual = !visual;
         collisionDetectionObject.boundingBoxOn = visual;
  
-        foreach (BoundingBox visualObject in visualObjects)
+       /* foreach (BoundingBox visualObject in visualObjects)
         {
-            visualObject.enabled = visual;
-        }
+            visualObject.GetComponent<LineRenderer>().enabled = visual;
+        }*/
     }
 
     public void ToggleText()
