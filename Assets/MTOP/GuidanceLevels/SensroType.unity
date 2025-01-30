@@ -32603,8 +32603,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spherePrefab: {fileID: 91955223511690673, guid: 3d41cdbeb87a8b142bb52f6300b251d1, type: 3}
   radius: 2.5
+  spawnDelay: 0.2
+  gridDensity: 0.3
   parentTransform: {fileID: 0}
-  spawnDelay: 0.3
 --- !u!1 &1394524245
 GameObject:
   m_ObjectHideFlags: 0
