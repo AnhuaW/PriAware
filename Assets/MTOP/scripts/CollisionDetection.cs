@@ -23,7 +23,7 @@ public class CollisionDetection : MonoBehaviour
             if (audioOn)
             {
                 AudioSource audioSource = targetObject.GetComponentInChildren<AudioSource>();
-                if (audioSource != null)
+                if (audioSource != null && audioSource.CompareTag("earcons"))
                 {
                     audioSource.enabled = true;
                 }
@@ -73,7 +73,7 @@ public class CollisionDetection : MonoBehaviour
             if (audioOn)
             {
                 AudioSource audioSource = targetObject.GetComponentInChildren<AudioSource>();
-                if (audioSource != null)
+                if (audioSource != null && audioSource.CompareTag("earcons"))
                 {
                     audioSource.enabled = false;
                 }
