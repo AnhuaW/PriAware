@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -24,6 +25,12 @@ public class BoundingBox : MonoBehaviour
 
         DrawBoxCollider();
         lineRenderer.enabled = false;
+    }
+    
+    void Update()
+    {
+        // Continuously update the bounding box to follow the GameObject
+        DrawBoxCollider();
     }
 
     void DrawBoxCollider()
