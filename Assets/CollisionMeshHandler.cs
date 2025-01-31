@@ -6,8 +6,8 @@ public class SensorCollisionHandler : MonoBehaviour
 {
     public GameObject spherePrefab;
     public float radius = 3f;
-    public float spawnDelay = 0.3f;
-    public float gridDensity = 0.2f; // Spacing of points for low-vertex meshes
+    public float spawnDelay = 0.2f;
+    public float gridDensity = 0.25f; // Spacing of points for low-vertex meshes
     [SerializeField] private Transform parentTransform;
     private HashSet<Vector3> spawnedPoints = new HashSet<Vector3>();
 
