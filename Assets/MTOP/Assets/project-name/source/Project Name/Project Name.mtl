@@ -1,0 +1,32 @@
+newmtl Wolf3D_Eye_db027649-32a9-4028-ad60-ae6350c1995a
+Kd 1.000 1.000 1.000
+d 1.000
+map_Kd Gltf_Import.jpg
+newmtl Wolf3D_Skin_a9d336bc-6c17-412a-8d55-3df47a094e41
+Kd 1.000 1.000 1.000
+d 1.000
+map_Kd Gltf_Import_1.jpg
+newmtl Wolf3D_Teeth_3711d214-8761-4583-8c7e-e1ac75805aa6
+Kd 1.000 1.000 1.000
+d 1.000
+map_Kd Gltf_Import_2.jpg
+newmtl Wolf3D_Body_d7fead96-3e8d-4fd5-b60d-7f3d424e7cf0
+Kd 1.000 1.000 1.000
+d 1.000
+map_Kd Gltf_Import_3.jpg
+newmtl Wolf3D_Outfit_Bottom_c92950e4-152d-43f9-a611-e87b7a2f7362
+Kd 1.000 1.000 1.000
+d 1.000
+map_Kd Gltf_Import_5.jpg
+newmtl Wolf3D_Outfit_Footwear_de9a4da9-faed-4fb7-bb2a-22181b917755
+Kd 1.000 1.000 1.000
+d 1.000
+map_Kd Gltf_Import_7.jpg
+newmtl Wolf3D_Outfit_Top_8e4a01da-2333-4c69-b7ef-0632843c54e8
+Kd 1.000 1.000 1.000
+d 1.000
+map_Kd Gltf_Import_9.jpg
+newmtl Wolf3D_Hair_27432ca9-200b-412a-9834-68235393b1b6
+Kd 1.000 1.000 1.000
+d 1.000
+map_Kd Gltf_Import_11.jpg
