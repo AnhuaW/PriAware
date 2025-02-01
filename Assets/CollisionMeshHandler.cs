@@ -8,6 +8,7 @@ public class SensorCollisionHandler : MonoBehaviour
     public float radius = 3f;
     public float spawnDelay = 0.2f;
     public float gridDensity = 0.25f; // Spacing of points for low-vertex meshes
+    public bool isOn = true;
     [SerializeField] private Transform parentTransform;
     private HashSet<Vector3> spawnedPoints = new HashSet<Vector3>();
 
@@ -16,7 +17,7 @@ public class SensorCollisionHandler : MonoBehaviour
         if (other.CompareTag("PrivacyRisk"))
         {
             MeshFilter meshFilter = other.GetComponent<MeshFilter>();
-            if (meshFilter != null && meshFilter.mesh != null)
+            if (meshFilter != null && meshFilter.mesh != null && isOn)
             {
                 if (meshFilter.mesh.vertexCount < 50) // Detects primitives and low-vertex meshes
                 {
@@ -100,5 +101,15 @@ public class SensorCollisionHandler : MonoBehaviour
         {
             Debug.LogWarning("Sphere prefab is not assigned!");
         }
+    }
+
+    public void ToggleOn()
+    {
+        isOn = true;
+    }
+
+    public void ToggleOff()
+    {
+        isOn = false;
     }
 }

@@ -12,7 +12,7 @@ public class TextToSpeechController : MonoBehaviour
     public bool descriptionPlayed = false;
     public void Start()
     {
-        textMeshPro = GetComponent<TextMeshPro>();
+        //textMeshPro = GetComponent<TextMeshPro>();
     }
 
     public void PlayAudioDescription()
@@ -23,5 +23,15 @@ public class TextToSpeechController : MonoBehaviour
             ttsSpeaker.Speak(textToSpeak);
             //descriptionPlayed = true;
         }
+    }
+
+    public void ShowText()
+    {
+        textMeshPro.enabled = true;
+    }
+
+    public void HideText()
+    {
+        textMeshPro.enabled = false;
     }
 }
