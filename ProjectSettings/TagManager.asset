@@ -15,6 +15,7 @@ TagManager:
   - earcons
   - textLabel
   - Icon
+  - Spatial
   layers:
   - Default
   - TransparentFX

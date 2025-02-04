@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SensorCollisionHandler : MonoBehaviour
+public class CollisionMeshHandler : MonoBehaviour
 {
     public GameObject spherePrefab;
     public float radius = 3f;
@@ -111,5 +111,28 @@ public class SensorCollisionHandler : MonoBehaviour
     public void ToggleOff()
     {
         isOn = false;
+    }
+
+    public void ToggleSpatialVisual(bool turnOn)
+    {
+        if (turnOn)
+        {
+            isOn = true;
+            GameObject[] spatialMeshes = GameObject.FindGameObjectsWithTag("Spatial");
+            foreach (GameObject spatialMesh in spatialMeshes)
+            {
+                spatialMesh.SetActive(true);
+            }
+        }
+
+        else
+        {
+            isOn = false;
+            GameObject[] spatialMeshes = GameObject.FindGameObjectsWithTag("Spatial");
+            foreach (GameObject spatialMesh in spatialMeshes)
+            {
+                spatialMesh.SetActive(false);
+            }
+        }
     }
 }

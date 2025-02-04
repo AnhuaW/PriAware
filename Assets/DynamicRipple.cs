@@ -9,10 +9,10 @@ public class DynamicRipple : MonoBehaviour
     public ParticleSystem rippleParticles; // Optional: Particle system for the ripple effect
 
     private float[] audioSpectrum; // Array to hold spectrum data
-    private float minRippleSize = 0.5f; // Minimum size of the ripple
-    private float maxRippleSize = 1.0f; // Maximum size of the ripple
-    private float expansionSpeed = 1.5f; // Speed at which the ripple grows
-    private float initialSize = 0.5f; // Initial size of the ripple
+    public float minRippleSize = 0.5f; // Minimum size of the ripple
+    public float maxRippleSize = 1.0f; // Maximum size of the ripple
+    public float expansionSpeed = 1.5f; // Speed at which the ripple grows
+    public float initialSize = 0.5f; // Initial size of the ripple
 
     void Start()
     {
@@ -20,7 +20,7 @@ public class DynamicRipple : MonoBehaviour
         audioSpectrum = new float[512]; // You can adjust the size depending on the frequency resolution needed
         if (rippleObject != null)
         {
-            rippleObject.transform.localScale = new Vector3(initialSize, 0.02f, initialSize); // Start with small ripple
+            rippleObject.transform.localScale = new Vector3(initialSize, initialSize, initialSize); // Start with small ripple
         }
     }
 
@@ -47,7 +47,7 @@ public class DynamicRipple : MonoBehaviour
         float rippleScale = Mathf.Lerp(minRippleSize, maxRippleSize, amplitude*10000);
 
         // Apply the new scale to the ripple object
-        rippleObject.transform.localScale = new Vector3(rippleScale, 0.02f, rippleScale);
+        rippleObject.transform.localScale = new Vector3(rippleScale,  rippleScale, rippleScale);
 
         // Optionally, if using a particle system, adjust the start size of particles
         if (rippleParticles != null)
