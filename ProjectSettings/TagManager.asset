@@ -17,6 +17,7 @@ TagManager:
   - Icon
   - Spatial
   - EyeGaze
+  - puzzle
   layers:
   - Default
   - TransparentFX

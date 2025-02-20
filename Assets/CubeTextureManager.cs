@@ -11,13 +11,18 @@ public class CubeTextureManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+    }
+
+    public void mapTexture()
+    {
         Debug.Log("mapping texture to cube "+ index);
-        for (int i = 0; i < sprites.Count; i++)
+        for (int i = 0; i < 6; i++)
         {
             int sliceIndex = i + index;
-            if (i + index > slices.Count)
+            if (i + index >= slices.Count)
             {
-                sliceIndex = i + index - slices.Count;
+                sliceIndex = (i + index ) % slices.Count;
             }
             sprites[i].sprite = slices[sliceIndex];
         }
