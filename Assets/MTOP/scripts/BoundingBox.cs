@@ -1,13 +1,16 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Meta.XR.Editor.UserInterface;
 using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider))]
 public class BoundingBox : MonoBehaviour
 {
-     private LineRenderer lineRenderer;
+    public Color startColor = Color.grey;
+    public Color endColor = Color.grey;
+    private LineRenderer lineRenderer;
 
     void Start()
     {
@@ -20,8 +23,8 @@ public class BoundingBox : MonoBehaviour
         // Set material and color
         lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
         lineRenderer.material.renderQueue = 4000; // Overlay render queue
-        lineRenderer.startColor = Color.red;
-        lineRenderer.endColor = Color.red;
+        lineRenderer.startColor = startColor;
+        lineRenderer.endColor = endColor;
 
         DrawBoxCollider();
         lineRenderer.enabled = false;

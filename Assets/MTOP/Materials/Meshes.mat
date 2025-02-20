@@ -83,11 +83,13 @@ Material:
     - _StencilOp: 0
     - _StencilReadMask: 255
     - _StencilWriteMask: 255
-    - _Transparency: 0.047
+    - _Transparency: 0.019
     - _UVSec: 0
     - _UseUIAlphaClip: 0
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 0.9607843, g: 0.5437691, b: 0.52156866, a: 0.15686275}
+    - _ColorBottom: {r: 1, g: 0.47743252, b: 0.41037738, a: 0.2}
+    - _ColorTop: {r: 1, g: 0.4301193, b: 0.3537736, a: 0.15686275}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

@@ -1,8 +1,9 @@
-Shader "Custom/AlwaysOnTopTransparent3D_VR_Quest"
+Shader "Custom/AlwaysOnTopTransparent3D_Gradient_VR_Quest"
 {
     Properties
     {
-        _Color ("Main Color", Color) = (1,1,1,1) // Base color with transparency
+        _ColorTop ("Top Color", Color) = (1,1,1,1) // Color at the top
+        _ColorBottom ("Bottom Color", Color) = (0,0,0,1) // Color at the bottom
         _Transparency ("Transparency", Range(0,1)) = 0.5 // Adjust transparency
         _Glossiness ("Smoothness", Range(0,1)) = 0.5
         _Metallic ("Metallic", Range(0,1)) = 0.0
@@ -40,10 +41,12 @@ Shader "Custom/AlwaysOnTopTransparent3D_VR_Quest"
             {
                 float4 pos : SV_POSITION;
                 float3 normal : NORMAL;
+                float gradientFactor : TEXCOORD0; // Stores gradient interpolation
                 UNITY_VERTEX_OUTPUT_STEREO
             };
 
-            float4 _Color;
+            float4 _ColorTop;
+            float4 _ColorBottom;
             float _Transparency;
             float _Glossiness;
             float _Metallic;
@@ -54,17 +57,26 @@ Shader "Custom/AlwaysOnTopTransparent3D_VR_Quest"
                 UNITY_SETUP_INSTANCE_ID(v);
                 UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
 
-                // Ensure proper stereo transformation (Fixes left-eye issue)
+                // Transform position
                 o.pos = UnityObjectToClipPos(v.vertex);
                 o.normal = UnityObjectToWorldNormal(v.normal);
+
+                // Normalize the Y position in object space
+                float minY = -0.5; // Adjust based on object scale if needed
+                float maxY = 0.5;
+                o.gradientFactor = saturate((v.vertex.y - minY) / (maxY - minY)); // Normalized 0 to 1 range
+
                 return o;
             }
 
             float4 frag (v2f i) : SV_Target
             {
+                // Interpolate between bottom and top colors based on height
+                float4 gradientColor = lerp(_ColorBottom, _ColorTop, i.gradientFactor);
+
                 // Simulate basic lighting using normal direction
                 float lightIntensity = saturate(dot(i.normal, float3(0,1,0)) * 0.5 + 0.5);
-                float3 litColor = _Color.rgb * lightIntensity;
+                float3 litColor = gradientColor.rgb * lightIntensity;
 
                 return float4(litColor, _Transparency);
             }

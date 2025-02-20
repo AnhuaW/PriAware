@@ -16,6 +16,7 @@ TagManager:
   - textLabel
   - Icon
   - Spatial
+  - EyeGaze
   layers:
   - Default
   - TransparentFX
