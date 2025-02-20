@@ -36,12 +36,12 @@ public class GazeInteractable : MonoBehaviour
 
     public void ScaleUp()
     {
-        StartCoroutine(ScaleOverTime(new Vector3(0.3f, 0.3f, 0.3f), 0.5f));
+        StartCoroutine(ScaleOverTime(new Vector3(0.15f, 0.15f, 0.15f), 0.5f));
     }
 
     public void ScaleDown()
     {
-        StartCoroutine(ScaleOverTime(new Vector3(0.2f, 0.2f, 0.2f), 0.5f));
+        StartCoroutine(ScaleOverTime(new Vector3(0.1f, 0.1f, 0.1f), 0.5f));
     }
     
     private IEnumerator ScaleOverTime(Vector3 targetScale, float duration)
