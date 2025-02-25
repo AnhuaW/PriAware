@@ -12,6 +12,7 @@ public class TextToSpeechController : MonoBehaviour
     public TTSSpeaker ttsSpeaker;
     public TTSSpeechSplitter ttsSplitter;
     public TextMeshPro textMeshPro;
+    public TextMeshPro ttsText;
     // For UI Text components
     public GazeInteractable gazeInteractable;
     public bool descriptionPlayed = false;
@@ -31,7 +32,7 @@ public class TextToSpeechController : MonoBehaviour
     {
         if (ttsSpeaker != null && textMeshPro != null && !isSpeaking)
         {
-            string textToSpeak = textMeshPro.text;
+            string textToSpeak = ttsText.text;
             List<string> phrases = new List<string> { textToSpeak };
 
             // Split the text into phrases
