@@ -15,7 +15,7 @@ public class BoundingBoxManager : MonoBehaviour
         boundingBoxes = GameObject.FindObjectsOfType<BoundingBox>();
         foreach (BoundingBox box in boundingBoxes)
         {
-            if (box.gameObject.GetComponent<Animator>() != null && box.gameObject.GetComponent<spatial>()==null)
+            if (box.gameObject.GetComponent<Animator>() != null && box.gameObject.GetComponent<spatial>()== null)
             {
                 box.startColor = startColor1;
                 box.endColor = endColor1;

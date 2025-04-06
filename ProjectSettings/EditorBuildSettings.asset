@@ -15,13 +15,13 @@ EditorBuildSettings:
     path: Assets/MTOP/GuidanceLevels/GuidanceLevel3.unity
     guid: ca5ab3e94f651d94391ef8d0949341f2
   - enabled: 1
-    path: Assets/MTOP/Scenarios/HomeOffice-Level3.unity
+    path: Assets/MTOP/Scenarios/HomeOffice/HomeOffice-Level3.unity
     guid: 7e31b9d837e1f024db0b3569ead48d04
   - enabled: 1
-    path: Assets/MTOP/Scenarios/HomeOffice-Level1.unity
+    path: Assets/MTOP/Scenarios/Level1-homeOffice.unity
     guid: a9065dd651984e64880e58865d21846b
   - enabled: 1
-    path: Assets/MTOP/Scenarios/HomeOffice-Level2.unity
+    path: Assets/MTOP/Scenarios/HomeOffice/HomeOffice-Level2.unity
     guid: 52cd89d4f2f3b904186ebe8166e152c3
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 254de3b12fb55b347883fc777e0389f4, type: 2}
