@@ -11,10 +11,21 @@ public class BoundingBox : MonoBehaviour
     public Color endColor = Color.grey;
     private LineRenderer lineRenderer;
 
+    private void Awake()
+    {
+        lineRenderer = gameObject.AddComponent<LineRenderer>();
+        lineRenderer.widthMultiplier = 0.02f; // Thickness of the lines
+        lineRenderer.loop = true; // Connect the last vertex to the first
+        lineRenderer.useWorldSpace = true;
+
+        // Set material and color
+        lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
+        lineRenderer.material.renderQueue = 4000; // Overlay render queue
+    }
+
     void Start()
     {
         // Initialize the LineRenderer
-        lineRenderer = gameObject.AddComponent<LineRenderer>();
         lineRenderer.widthMultiplier = 0.02f; // Thickness of the lines
         lineRenderer.loop = true; // Connect the last vertex to the first
         lineRenderer.useWorldSpace = true;
@@ -69,5 +80,11 @@ public class BoundingBox : MonoBehaviour
         // Assign positions to the LineRenderer
         lineRenderer.positionCount = edgePositions.Length;
         lineRenderer.SetPositions(edgePositions);
+    }
+
+    public void UpdateColor()
+    {
+        lineRenderer.startColor = startColor;
+        lineRenderer.endColor = endColor;
     }
 }

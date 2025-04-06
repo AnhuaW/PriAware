@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BoundingBoxManager : MonoBehaviour
@@ -25,6 +26,7 @@ public class BoundingBoxManager : MonoBehaviour
                 box.startColor = startColor;
                 box.endColor = endColor;
             }
+            box.UpdateColor();
         }
     }
 
