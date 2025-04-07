@@ -30,7 +30,7 @@ public class TextToSpeechController : MonoBehaviour
 
     public void PlayAudioDescription()
     {
-        if (ttsSpeaker != null && textMeshPro != null && !isSpeaking)
+        if (ttsSpeaker != null && textMeshPro)
         {
             string textToSpeak = ttsText.text;
             List<string> phrases = new List<string> { textToSpeak };
@@ -79,7 +79,10 @@ public class TextToSpeechController : MonoBehaviour
 
     public void ShowText()
     {
-        textMeshPro.enabled = true;
+        if (!isSpeaking)
+        {
+            textMeshPro.enabled = true;
+        }
     }
 
     public void HideText()

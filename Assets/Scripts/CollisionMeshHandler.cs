@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CollisionMeshHandler : MonoBehaviour
@@ -14,8 +15,9 @@ public class CollisionMeshHandler : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("PrivacyRisk"))
+        if (other.gameObject.CompareTag("PrivacyRisk"))
         {
+            Debug.Log(other.gameObject.name + "spatial mapping");
             MeshFilter meshFilter = other.GetComponent<MeshFilter>();
             if (meshFilter != null && meshFilter.mesh != null && isOn)
             {
