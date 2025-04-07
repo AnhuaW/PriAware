@@ -89,10 +89,10 @@ Material:
     - _EnvironmentDepthBias: 0
     - _FlipbookMode: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.753
+    - _Glossiness: 0.201
     - _GlossyReflections: 1
     - _LightingEnabled: 0
-    - _Metallic: 0.217
+    - _Metallic: 0
     - _Mode: 3
     - _OcclusionStrength: 1
     - _Parallax: 0.02
