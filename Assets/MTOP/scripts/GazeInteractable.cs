@@ -11,6 +11,11 @@ public class GazeInteractable : MonoBehaviour
     public UnityEvent OnGazeEnter;
     public UnityEvent OnAudioComplete;
     public UnityEvent OnGazeExit;
+    [SerializeField]public List<BoundingBox> boundingBoxes = new List<BoundingBox>();
+    [SerializeField] private GameObject left_hand;
+    [SerializeField] private GameObject right_hand;
+    public Material oculusHandMat;
+    public Material hightLightMat;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +47,32 @@ public class GazeInteractable : MonoBehaviour
     public void ScaleDown()
     {
         StartCoroutine(ScaleOverTime(new Vector3(0.1f, 0.1f, 0.1f), 0.5f));
+    }
+
+    public void ShowBoundingBoxes()
+    {
+        boundingBoxes.ForEach(b => b.lineRenderer.enabled = true);
+    }
+
+    public void HideBoundingBoxes()
+    {
+        boundingBoxes.ForEach(b => b.lineRenderer.enabled = false);
+    }
+
+    public void ShowHightLights()
+    {
+        SkinnedMeshRenderer smrL = left_hand.GetComponent<SkinnedMeshRenderer>();
+        SkinnedMeshRenderer smrR = right_hand.GetComponent<SkinnedMeshRenderer>();
+        smrL.materials = new Material[] { hightLightMat };
+        smrR.materials = new Material[] { hightLightMat };
+    }
+
+    public void HideHightLights()
+    {
+        SkinnedMeshRenderer smrL = left_hand.GetComponent<SkinnedMeshRenderer>();
+        SkinnedMeshRenderer smrR = right_hand.GetComponent<SkinnedMeshRenderer>();
+        smrL.materials = new Material[] { oculusHandMat };
+        smrR.materials = new Material[] { oculusHandMat };
     }
     
     private IEnumerator ScaleOverTime(Vector3 targetScale, float duration)

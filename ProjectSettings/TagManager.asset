@@ -18,6 +18,8 @@ TagManager:
   - Spatial
   - EyeGaze
   - puzzle
+  - left_hand
+  - right_hand
   layers:
   - Default
   - TransparentFX

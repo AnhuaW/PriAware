@@ -9,7 +9,7 @@ public class BoundingBox : MonoBehaviour
 {
     public Color startColor = Color.grey;
     public Color endColor = Color.grey;
-    private LineRenderer lineRenderer;
+    public LineRenderer lineRenderer;
 
     private void Awake()
     {
@@ -39,7 +39,7 @@ public class BoundingBox : MonoBehaviour
         DrawBoxCollider();
         lineRenderer.enabled = false;
     }
-    
+
     void Update()
     {
         // Continuously update the bounding box to follow the GameObject
