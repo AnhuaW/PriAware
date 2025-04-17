@@ -166,6 +166,7 @@ MonoBehaviour:
   ttsSpeaker: {fileID: 0}
   ttsSplitter: {fileID: 0}
   textMeshPro: {fileID: 2683771459831834134}
+  ttsText: {fileID: 0}
   gazeInteractable: {fileID: 3662112802847966043}
   descriptionPlayed: 0
 --- !u!114 &3662112802847966043
@@ -219,6 +220,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3662112802847966043}
+        m_TargetAssemblyTypeName: GazeInteractable, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnAudioComplete:
     m_PersistentCalls:
       m_Calls:
@@ -249,6 +262,25 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3662112802847966043}
+        m_TargetAssemblyTypeName: GazeInteractable, Assembly-CSharp
+        m_MethodName: StopAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  boundingBoxes: []
+  left_hand: {fileID: 0}
+  right_hand: {fileID: 0}
+  audioSource: {fileID: 0}
+  oculusHandMat: {fileID: 0}
+  hightLightMat: {fileID: 0}
+  isActive: 0
 --- !u!1 &3482870272885952410
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,13 +14,16 @@ public class GazeInteractable : MonoBehaviour
     [SerializeField]public List<BoundingBox> boundingBoxes = new List<BoundingBox>();
     [SerializeField] private GameObject left_hand;
     [SerializeField] private GameObject right_hand;
+    [SerializeField] private AudioSource audioSource;
     public Material oculusHandMat;
     public Material hightLightMat;
+    public bool isActive;
+
     // Start is called before the first frame update
     void Start()
     {
         //TODO
-        
+        audioSource = GetComponentInChildren<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -28,6 +31,7 @@ public class GazeInteractable : MonoBehaviour
         if (other.CompareTag("EyeGaze"))
         {
             OnGazeEnter.Invoke();
+            isActive = true;
         }
     }
 
@@ -57,6 +61,16 @@ public class GazeInteractable : MonoBehaviour
     public void HideBoundingBoxes()
     {
         boundingBoxes.ForEach(b => b.lineRenderer.enabled = false);
+    }
+
+    public void PlayAudio()
+    {
+        audioSource.enabled = true;
+    }
+
+    public void StopAudio()
+    {
+        audioSource.enabled = false;
     }
 
     public void ShowHightLights()

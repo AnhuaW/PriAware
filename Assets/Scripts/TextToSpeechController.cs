@@ -30,7 +30,7 @@ public class TextToSpeechController : MonoBehaviour
 
     public void PlayAudioDescription()
     {
-        if (ttsSpeaker != null && textMeshPro)
+        if (ttsSpeaker != null && textMeshPro && !isSpeaking)
         {
             string textToSpeak = ttsText.text;
             List<string> phrases = new List<string> { textToSpeak };
@@ -66,6 +66,7 @@ public class TextToSpeechController : MonoBehaviour
             isSpeaking = false;
             descriptionPlayed = true;
             gazeInteractable.OnAudioComplete.Invoke();
+            gazeInteractable.isActive = false;
         }
     }
 

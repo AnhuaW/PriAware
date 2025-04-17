@@ -32,7 +32,6 @@ public class BoundingBox : MonoBehaviour
 
         // Set material and color
         lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
-        lineRenderer.material.renderQueue = 4000; // Overlay render queue
         lineRenderer.startColor = startColor;
         lineRenderer.endColor = endColor;
 
