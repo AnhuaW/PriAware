@@ -7382,7 +7382,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2060652051583584200, guid: 7b9533d810c89334599fa58535fd0bb3, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2060652051583584200, guid: 7b9533d810c89334599fa58535fd0bb3, type: 3}
       propertyPath: rigCamera
@@ -7390,10 +7390,9 @@ PrefabInstance:
       objectReference: {fileID: 1054049219}
     - target: {fileID: 2683771459831834134, guid: 7b9533d810c89334599fa58535fd0bb3, type: 3}
       propertyPath: m_text
-      value: The AR glasses' depth sensor and camera continuously capture your hands,
-        movements, and gestures, which can reveal sensitive biometric details like
-        age, gender, health conditions, and behavior patterns, posing risks to your
-        privacy.
+      value: The AR glasses captured identifiable information about nearby individuals.This
+        data can be used to recognize, profile, or link bystanders to external records
+        or social media, all without their consent.
       objectReference: {fileID: 0}
     - target: {fileID: 2683771459831834134, guid: 7b9533d810c89334599fa58535fd0bb3, type: 3}
       propertyPath: m_Enabled
@@ -7437,11 +7436,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3662112802847966043, guid: 7b9533d810c89334599fa58535fd0bb3, type: 3}
       propertyPath: OnGazeEnter.m_PersistentCalls.m_Calls.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3662112802847966043, guid: 7b9533d810c89334599fa58535fd0bb3, type: 3}
       propertyPath: OnAudioComplete.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3662112802847966043, guid: 7b9533d810c89334599fa58535fd0bb3, type: 3}
       propertyPath: OnGazeExit.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -7501,7 +7500,7 @@ PrefabInstance:
       objectReference: {fileID: 1193230901}
     - target: {fileID: 3662112802847966043, guid: 7b9533d810c89334599fa58535fd0bb3, type: 3}
       propertyPath: OnGazeEnter.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: ShowHightLights
+      value: PlayAudio
       objectReference: {fileID: 0}
     - target: {fileID: 3662112802847966043, guid: 7b9533d810c89334599fa58535fd0bb3, type: 3}
       propertyPath: OnGazeEnter.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
@@ -29611,9 +29610,9 @@ PrefabInstance:
       objectReference: {fileID: 1054049219}
     - target: {fileID: 2683771459831834134, guid: 7b9533d810c89334599fa58535fd0bb3, type: 3}
       propertyPath: m_text
-      value: Background sounds captured by the microphone, like voices or environmental
-        noises, can reveal information about the user's location, activities, and
-        behavior.
+      value: Background sounds captured can provide contextual cues about the your
+        location, time, and activities. For example that you are in a park attending
+        a social gathering with friends.
       objectReference: {fileID: 0}
     - target: {fileID: 2683771459831834134, guid: 7b9533d810c89334599fa58535fd0bb3, type: 3}
       propertyPath: m_Enabled
@@ -44056,9 +44055,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Background sounds caputred by the microphone, inlcuding environmental
-    sounds, voices, conversation, dog barking can provide contextual cues about the
-    user\u2019s location, time, and activities, enabling behavioral profiling"
+  m_text: Background sounds can provide contextual cues about the your location,
+    time, and activities. For example that you are in a park attending a social gathering
+    with friends.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -64741,10 +64740,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The AR glasses' depth sensor and camera continuously capture your hands,
-    movement pattern, and gestures. This data can be used to infer sensitive biometric
-    information, such as your age, gender, health conditions or even predict behaviors,
-    posing risks to your personal privacy.
+  m_text: The AR glasses captured identifiable information about nearby individuals.This
+    data can be used to recognize, profile, or link bystanders to external records
+    or social media, all without their consent.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
