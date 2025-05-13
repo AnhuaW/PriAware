@@ -26035,13 +26035,78 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4af0fa186b3d6ba4ab272771613036b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClips:
+  audioClips1:
   - {fileID: 8300000, guid: 2563a66677acaa047ace62d9eb69e2d8, type: 3}
   - {fileID: 8300000, guid: f413c67f3b4804a41a379f47304f9d7a, type: 3}
+  audioClips2:
   - {fileID: 8300000, guid: bb01bcec4f6c89148b15a4e2a1cf849c, type: 3}
+  audioClips3:
   - {fileID: 8300000, guid: 48de95c821ad4184393b989215b7ce17, type: 3}
   - {fileID: 8300000, guid: a5b7997c8cf18e54bb30c5977b66e1b8, type: 3}
+  audioClips4: []
+  studentAnimator: {fileID: 1099521308}
+  onQuestion:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 992592785}
+        m_TargetAssemblyTypeName: PlayAudioSequence, Assembly-CSharp
+        m_MethodName: RaiseHand
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onPause:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 992592785}
+        m_TargetAssemblyTypeName: PlayAudioSequence, Assembly-CSharp
+        m_MethodName: CallName
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 992592785}
+        m_TargetAssemblyTypeName: PlayAudioSequence, Assembly-CSharp
+        m_MethodName: AnswerQuestion
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onResume:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 992592785}
+        m_TargetAssemblyTypeName: PlayAudioSequence, Assembly-CSharp
+        m_MethodName: ResumeTalking
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _audioSource: {fileID: 0}
+  _animator: {fileID: 0}
 --- !u!1 &993843751
 GameObject:
   m_ObjectHideFlags: 0
@@ -29259,6 +29324,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62405bdc05eb3ff43936d994d375f002, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1099521308 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 228a99bb0a3a67044b2d41bb8c5c6e57, type: 3}
+  m_PrefabInstance: {fileID: 1418486903}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1100490967
 GameObject:
   m_ObjectHideFlags: 0
