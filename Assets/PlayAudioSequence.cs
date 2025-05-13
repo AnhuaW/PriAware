@@ -31,7 +31,7 @@ public class PlayAudioSequence : MonoBehaviour
         {
             _stateInfo = studentAnimator.GetCurrentAnimatorStateInfo(0);
         }
-
+        _animator.SetBool("isTalking", true);
         StartCoroutine(PlayWithDelay(audioClips1,0f,onQuestion));
     }
     // Update is called once per frame
@@ -60,12 +60,13 @@ public class PlayAudioSequence : MonoBehaviour
     {
         _animator.SetBool("isTalking", false);
         studentAnimator.SetBool("isStanding", true);
-        StartCoroutine(PlayWithDelay(audioClips2, 0.2f, onResponse));
+        //StartCoroutine(PlayWithDelay(audioClips2, 0.2f, onResponse));
     }
 
     public void ResumeTalking()
     {
         StartCoroutine(PlayWithDelay(audioClips3, 0f));
+        studentAnimator.SetBool("isStanding", false);
         _animator.SetBool("isTalking", true);
     }
 
