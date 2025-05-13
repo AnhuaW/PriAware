@@ -16,8 +16,9 @@ public class PlayAudioSequence : MonoBehaviour
     public UnityEvent onResponse = new UnityEvent();
     public UnityEvent onResume = new UnityEvent();
     private bool onStart = true;
-    
-    [SerializeField] AudioSource _audioSource;
+    public AudioSource studentAudioSource;
+
+    [SerializeField] private AudioSource _audioSource;
     [SerializeField] Animator _animator;
 
     [SerializeField]private AnimatorStateInfo _stateInfo;
@@ -31,7 +32,7 @@ public class PlayAudioSequence : MonoBehaviour
             _stateInfo = studentAnimator.GetCurrentAnimatorStateInfo(0);
         }
 
-        StartCoroutine(PlayWithDelay(audioClips1,0f));
+        StartCoroutine(PlayWithDelay(audioClips1,0f,onQuestion));
     }
     // Update is called once per frame
     void Update()
