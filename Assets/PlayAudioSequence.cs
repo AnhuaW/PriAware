@@ -14,10 +14,8 @@ public class PlayAudioSequence : MonoBehaviour
     public UnityEvent onQuestion = new UnityEvent();
     public UnityEvent onPause = new UnityEvent();
     public UnityEvent onResponse = new UnityEvent();
-    public UnityEvent onResume = new UnityEvent();
     private bool onStart = true;
     public AudioSource studentAudioSource;
-
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] Animator _animator;
 
@@ -45,14 +43,14 @@ public class PlayAudioSequence : MonoBehaviour
         studentAnimator.SetTrigger("raiseHand");
         Debug.Log("current stateinfo is raiseHand: " + studentAnimator.GetCurrentAnimatorStateInfo(0).IsName("raiseHand"));
         //Debug.Log("raiseHand triggered");
-        StartCoroutine(PlayWithDelay(audioClips2, 0.3f, onPause));
+        StartCoroutine(PlayWithDelay(audioClips2, 1f, onPause));
     }
 
     public void AnswerQuestion()
     {
         //Play response audio
         Debug.Log("answerning questions");
-        StartCoroutine(PlayWithDelay(audioClips4, 0.1f, onResume));
+        StartCoroutine(PlayWithDelayStudent(audioClips4, 0f, onResume));
     }
     
 
@@ -60,12 +58,12 @@ public class PlayAudioSequence : MonoBehaviour
     {
         _animator.SetBool("isTalking", false);
         studentAnimator.SetBool("isStanding", true);
-        //StartCoroutine(PlayWithDelay(audioClips2, 0.2f, onResponse));
+        StartCoroutine(PlayWithDelayStudent(audioClips4, 0.2f, onResponse));
     }
 
     public void ResumeTalking()
     {
-        StartCoroutine(PlayWithDelay(audioClips3, 0f));
+        StartCoroutine(PlayWithDelay(audioClips3, 0.5f));
         studentAnimator.SetBool("isStanding", false);
         _animator.SetBool("isTalking", true);
     }
@@ -82,6 +80,29 @@ public class PlayAudioSequence : MonoBehaviour
         {
             _audioSource.clip = clip;
             _audioSource.PlayOneShot(clip);
+            yield return new WaitForSeconds(clip.length);
+            yield return new WaitForSeconds(0.5f);
+        }
+        //yield return new WaitForSeconds(0.5f);
+        if (currUnityEvent != null)
+        {
+            currUnityEvent.Invoke();
+            Debug.Log(currUnityEvent.ToString() + "is invoked");
+        }
+    }
+    
+    IEnumerator PlayWithDelayStudent (List<AudioClip>audioClips, float delay, UnityEvent currUnityEvent = null)
+    {
+        if (onStart)
+        {
+            yield return new WaitForSeconds(0.5f);
+            onStart = false;
+        }
+        yield return new WaitForSeconds(delay);
+        foreach (AudioClip clip in audioClips)
+        {
+            studentAudioSource.clip = clip;
+            studentAudioSource.PlayOneShot(clip);
             yield return new WaitForSeconds(clip.length);
             yield return new WaitForSeconds(0.5f);
         }
