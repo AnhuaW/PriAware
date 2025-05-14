@@ -45,15 +45,6 @@ public class PlayAudioSequence : MonoBehaviour
         //Debug.Log("raiseHand triggered");
         StartCoroutine(PlayWithDelay(audioClips2, 1f, onPause));
     }
-
-    public void AnswerQuestion()
-    {
-        //Play response audio
-        Debug.Log("answerning questions");
-        StartCoroutine(PlayWithDelayStudent(audioClips4, 0f, onResume));
-    }
-    
-
     public void CallName()
     {
         _animator.SetBool("isTalking", false);
