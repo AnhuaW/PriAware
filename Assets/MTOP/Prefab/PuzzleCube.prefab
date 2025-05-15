@@ -97,7 +97,6 @@ GameObject:
   - component: {fileID: 4850698311077443469}
   - component: {fileID: 4846913764837289016}
   - component: {fileID: 5812987681732416312}
-  - component: {fileID: 2553442434891181092}
   - component: {fileID: 3005943302261096348}
   m_Layer: 0
   m_Name: PuzzleCube
@@ -222,22 +221,10 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &2553442434891181092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2771146726198677604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 358cbd2353c662a42bb45a99d6772cc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3005943302261096348
 MonoBehaviour:
   m_ObjectHideFlags: 0
