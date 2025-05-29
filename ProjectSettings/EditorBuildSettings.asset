@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/MTOP/Scenarios/HomeOffice/HomeOffice-Level3.unity
     guid: 7e31b9d837e1f024db0b3569ead48d04
   - enabled: 1
-    path: Assets/MTOP/Scenarios/Level1-homeOffice.unity
+    path: Assets/MTOP/Scenarios/scenes/home office.unity
     guid: a9065dd651984e64880e58865d21846b
   - enabled: 1
     path: Assets/MTOP/Scenarios/HomeOffice/HomeOffice-Level2.unity
