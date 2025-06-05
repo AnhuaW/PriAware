@@ -38,7 +38,7 @@ public class SmoothMove : MonoBehaviour
             }
 
             // When the object reaches point B or A, trigger rotation
-            if (fractionOfJourney >= 1f)
+            if (fractionOfJourney > 0.9f)
             {
                 isTurning = true;
                 startTime = Time.time; // Restart the timer for rotation
