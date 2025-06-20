@@ -2,61 +2,43 @@ using UnityEngine;
 
 public class SmoothMove : MonoBehaviour
 {
-    public Transform pointA;  // Starting position
-    public Transform pointB;  // Target position
-    public float speed = 2f;  // Speed at which the object moves
-    public float turnSpeed = 2f; // Speed at which the object turns
+    public Transform pointA;
+    public Transform pointB;
+    public float speed = 2f;
+    public float turnSpeed = 2f;
 
-    private float journeyLength;  // The total distance between point A and point B
-    private float startTime;  // Time when the movement started
-    private bool movingTowardsB = true; // Direction of movement (towards point B)
-    private bool isTurning = false; // Whether the object is currently rotating
-
-    void Start()
-    {
-        // Calculate the distance between the two points
-        journeyLength = Vector3.Distance(pointA.position, pointB.position);
-        startTime = Time.time; // Start the timer
-    }
+    private bool movingTowardsB = true;
+    private bool isTurning = false;
 
     void Update()
     {
-        // Calculate the distance covered
-        float distanceCovered = (Time.time - startTime) * speed;
-        float fractionOfJourney = distanceCovered / journeyLength;
-
-        // If the object is not turning, move it along the path
         if (!isTurning)
         {
-            if (movingTowardsB)
-            {
-                transform.position = Vector3.Lerp(pointA.position, pointB.position, fractionOfJourney);
-            }
-            else
-            {
-                transform.position = Vector3.Lerp(pointB.position, pointA.position, fractionOfJourney);
-            }
+            Vector3 targetPos = movingTowardsB ? pointB.position : pointA.position;
+            Vector3 moveDirection = (targetPos - transform.position).normalized;
 
-            // When the object reaches point B or A, trigger rotation
-            if (fractionOfJourney > 0.9f)
+            // Move towards the target
+            transform.position += moveDirection * speed * Time.deltaTime;
+
+            // Check if close enough to start turning
+            if (Vector3.Distance(transform.position, targetPos) < 0.1f)
             {
                 isTurning = true;
-                startTime = Time.time; // Restart the timer for rotation
             }
         }
         else
         {
-            // Smooth rotation towards the target point
-            Vector3 targetDirection = movingTowardsB ? pointB.position - transform.position : pointA.position - transform.position;
-            Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
+            Vector3 nextTarget = movingTowardsB ? pointA.position : pointB.position;
+            Vector3 dirToNextTarget = (nextTarget - transform.position).normalized;
+            Quaternion targetRotation = Quaternion.LookRotation(dirToNextTarget);
+
+            // Rotate smoothly towards the next target
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, turnSpeed * Time.deltaTime);
 
-            // If rotation is complete, start moving again
             if (Quaternion.Angle(transform.rotation, targetRotation) < 1f)
             {
-                isTurning = false; // Rotation done
-                movingTowardsB = !movingTowardsB; // Change direction
-                startTime = Time.time; // Restart movement timer
+                isTurning = false;
+                movingTowardsB = !movingTowardsB;
             }
         }
     }
