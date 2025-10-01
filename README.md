@@ -1,1 +1,7 @@
-As augmented reality (AR) glasses see increased adoption, their environmental and biometric sensing capabilities raise critical privacy concerns for users and bystanders. To help enhance AR users’ privacy awareness, we conceptualized \textit{PriAware} as a three-level privacy guidance system and explored selected elements of it through a simulated AR-in-VR prototype. A user study with 12 participants revealed that richer cues significantly improved understanding of privacy threats but were perceived as highly intrusive during tasks. Participants strongly favored delivering comprehensive guidance during on boarding and shifting to lightweight, context-triggered, or on-demand reminders for daily use. These findings suggest that a combination of comprehensive guidance and adaptive and user-configurable privacy notifications can balance awareness-building with usability and offer design directions for future privacy-preserving AR interfaces.
+# *PriAware*: Exploring Enhancing Privacy Awareness in AR Users
+This repository contains the three-level privacy guidance prototypes described in my master's thesis advised by Dr. Michael Nebeling and Shwetha Rajaram.
+- Read the full paper here
+---
+**_PriAware_** is a concept of three-level privacy guidance to help enhance AR users privacy awareness in future every AR usage through both visual and audio cues. 
+
+
