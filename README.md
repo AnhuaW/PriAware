@@ -3,5 +3,5 @@ This repository contains the three-level privacy guidance prototypes described i
 - Read the full paper here
 ---
 **_PriAware_** is a concept of three-level privacy guidance to help enhance AR users privacy awareness in future every AR usage through both visual and audio cues. 
-
-
+![Privacy Guidance Levels Organized by Level of Guidance](https://github.com/AnhuaW/AnhuaW.github.io/blob/main/Privacy%20Guidance%20Levels.png)
+![Privacy Guidance Cues Organized by Privacy Guidance Levels.](https://github.com/AnhuaW/AnhuaW.github.io/blob/main/Privacy%20Guidance%20Cues%20Organized%20by%20Privacy%20Guidance%20Levels.png)
