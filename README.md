@@ -3,7 +3,7 @@ This repository contains the three-level privacy guidance prototypes described i
 
 **_PriAware_** is a concept of three-level privacy guidance to help enhance AR users privacy awareness in everyday always-on AR usage through both visual and audio cues. 
 
-Read the full paper here
+Read the full paper here >> [PriAware: Exploring Enhancing Privacy Awareness in AR Users](https://backend.production.deepblue-documents.lib.umich.edu/server/api/core/bitstreams/0bf1352c-c958-48d9-813a-cf39380208b8/content)
 
 ## Backgroun and Motivation
 Advancement and rising adoption in AR technology will soon enable every-day always-on usage of AR, but can introduce novel privacy concerns for both end-users and bystanders, due to its invasive sensing capabilities.
