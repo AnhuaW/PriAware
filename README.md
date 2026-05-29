@@ -18,7 +18,7 @@ Our work addresses this by introducing a three-level privacy guidance approach t
 - Level 2: What is Detected? (Highlight what's recognized by the system (objects, environments, people.)
 - Level 3: What is Inferred? (Explain potential privacy risks.)
 
-## Privacy Guidance
+## Privacy Guidance Design
 
 | ![Privacy Guidance Levels Organized by Level of Guidance](https://github.com/AnhuaW/AnhuaW.github.io/blob/main/Privacy%20Guidance%20Levels.png) | 
 |:--:| 
@@ -27,3 +27,13 @@ Our work addresses this by introducing a three-level privacy guidance approach t
 | ![Privacy Guidance Cues Organized by Privacy Guidance Levels.](https://github.com/AnhuaW/AnhuaW.github.io/blob/main/Privacy%20Guidance%20Cues%20Organized%20by%20Privacy%20Guidance%20Levels.png) | 
 |:--:| 
 | *Privacy Guidance Cues Organized by Privacy Guidance Levels.* |
+
+## Privacy Guidance Prototpye
+We created 3 AR usage scenarios for the evaluation of the privacy guidance, differing in the space (namely private, semipublic, and public).
+![AR usage scenarios](https://github.com/AnhuaW/AnhuaW.github.io/blob/main/privacy-guidance-scenarios.png)
+
+| Level 1 - What is Captured?  | Level 2 - What is Detected? | Level 3 - What is Inferred?|
+|:--:|:--:|:--:|
+|Personal Home Office|Shared Classroom| Public Park |
+|![Level 1 with Annotations](https://github.com/AnhuaW/AnhuaW.github.io/blob/main/level-1-annotations.png)|![Level 2 with Annotations](https://github.com/AnhuaW/AnhuaW.github.io/blob/main/level-2-annotations.png)|![Level 3 with Annotations](https://github.com/AnhuaW/AnhuaW.github.io/blob/main/level-3-annotations.png)|
+|![Level 1 prototype](https://github.com/AnhuaW/AnhuaW.github.io/blob/main/guidance-level-1.gif)|![Level 2 prototype](https://github.com/AnhuaW/AnhuaW.github.io/blob/main/guidance-level-2.gif)|![Level 3 prototype](https://github.com/AnhuaW/AnhuaW.github.io/blob/main/guidance-level-3.gif)|
