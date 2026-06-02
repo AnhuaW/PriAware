@@ -29,7 +29,8 @@ Our work addresses this by introducing a three-level privacy guidance approach t
 | *Privacy Guidance Cues Organized by Privacy Guidance Levels.* |
 
 ## Privacy Guidance Prototpye
-We created 3 AR usage scenarios for the evaluation of the privacy guidance, differing in the space (namely private, semipublic, and public).
+We created 3 AR usage scenarios for the evaluation of the privacy guidance, differing in the space (namely private, semi-public, and public).
+
 ![AR usage scenarios](https://github.com/AnhuaW/AnhuaW.github.io/blob/main/privacy-guidance-scenarios.png)
 
 | Level 1 - What is Captured?  | Level 2 - What is Detected? | Level 3 - What is Inferred?|
